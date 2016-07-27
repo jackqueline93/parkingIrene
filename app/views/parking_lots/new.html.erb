@@ -43,6 +43,11 @@
     <%= f.select :district_id, @districts.map { |p| [p.description, p.id] }, {:class => "form-control"} %>
   </div>
   
+  <div class="control-group">
+    <%= f.label :avatar, :class => "control-label" , :value => "Avatar"%><br />
+    <%= f.file_field :avatar,  :class => "form-control" %>
+  </div>
+  
   <h4>Seguridad</h4>
   <div class="control-group">
     <%= f.label "has_security_cameras" %> 

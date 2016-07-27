@@ -37,7 +37,7 @@ class ParkingLotsController < ApplicationController
   private
   def params_parking_lot
     params.require(:parking_lot).permit(
-      :name, :description, :price, :opening_time, :closing_time, :user_id, :district_id, :has_security_cameras, :has_security_alarms, :has_security_persons, :has_supermarkets_close, :has_restaurants_close, :has_cinemas_close
+      :name, :description, :price, :opening_time, :closing_time, :user_id, :district_id, :has_security_cameras, :has_security_alarms, :has_security_persons, :has_supermarkets_close, :has_restaurants_close, :has_cinemas_close, :avatar
     )
   end
 end

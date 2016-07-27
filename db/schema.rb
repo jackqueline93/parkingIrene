@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160727223103) do
+ActiveRecord::Schema.define(version: 20160727225519) do
 
   create_table "districts", force: :cascade do |t|
     t.string   "description"
@@ -35,6 +35,10 @@ ActiveRecord::Schema.define(version: 20160727223103) do
     t.boolean  "has_cinemas_close"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "rents", force: :cascade do |t|

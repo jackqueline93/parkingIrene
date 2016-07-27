@@ -1,6 +1,8 @@
 <p>
-    <strong>Id:</strong> <%= @district.id %>
+    <strong>Id:</strong> <%= @parking_lot.id %>
 </p>
 <p>
-    <strong>Descripción:</strong> <%= @district.description %>
+    <strong>Descripción:</strong> <%= @parking_lot.description %>
 </p>
+
+<%= image_tag @parking_lot.avatar.url(:medium) %>
