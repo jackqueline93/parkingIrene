@@ -1,0 +1,33 @@
+<h1>Reservaciones realizadas</h1>
+<a href="/rents/new" >Agregar Reservacion</a>
+<table class="table table-hovered table-bordered">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Distrito</th>
+        <th>Estacionmiento</th>
+        <th>Cliente</th>
+        <th>Fecha</th>
+        <th>Tiempo</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>        
+    </thead>
+    <tbody>
+    <% @rents.each do |rent| %>    
+    <tr>
+        <td><%= rent.id %></td>
+        <td><%= rent.district.name %></td>
+        <td><%= rent.parking_lot %></td>
+        <td><%= rent.user.name %></td>
+        <td><%= rent.date %></td>
+        <td><%= rent.minutes %></td>
+        <td><%= link_to "Show", rent %></td>
+        <td><%= link_to "Edit", edit_rent_path(rent) %></td>
+        <td><%= link_to "Remove", rent, method: :delete, data: { confirm: "Are you sure?" } %></td>
+    </tr>
+    <% end %>
+    </tbody>
+    
+</table>

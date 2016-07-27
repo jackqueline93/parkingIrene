@@ -1,0 +1,46 @@
+<div class="col-md-12">
+<fieldset>
+      <div id="legend">
+      <legend class="">
+        <strong> Rentar un estacionamiento
+      </legend>
+    </div>    
+
+<%= form_for(@rent) do |f| %>
+
+<div class="row">
+
+  <div class="col-md-6">
+  
+      <div class="control-group">
+        <%= f.label :parking_lot, :class => "control-label", :value => "Estacionmiento" %><br />
+        <%= f.select :parking_lot_id, @parking_lots.map { |p| [p.name, p.id] }, {:class => "form-control"} %>
+      </div>
+      <div class="control-group">
+        <%= f.label :date, :class => "control-label", :value => "Fecha" %>
+        <%= f.date_field :date, autofocus: true, :class => "form-control" %>
+      </div>
+      <div class="control-group">
+        <%= f.label :hours, :class => "control-label", :value => "Horas" %>
+        <%= f.text_field :hours, autofocus: true, :class => "form-control" %>
+      </div>
+  
+  </div>
+
+  
+  <div class="row">
+    <% if @rent.errors.any? %>
+      <div id="errors">
+        <% @rent.errors.full_messages.each do |msg| %>
+        <p class="text text-warning"> <%= msg %> </p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+ 
+
+<% end %>
+
+
+</fieldset>
+</div>

@@ -1,0 +1,98 @@
+<div class="col-md-12">
+<fieldset>
+      <div id="legend">
+      <legend class="">
+        <strong> Ofertar/Publicar </strong> mi estacionamiento
+      </legend>
+    </div>    
+
+<%= form_for(@parking_lot) do |f| %>
+
+<div class="col-md-6">
+
+    <div class="control-group">
+      <%= f.label :name, :class => "control-label", :value => "Nombre" %>
+      <%= f.text_field :name, autofocus: true, :class => "form-control" %>
+    </div>
+  
+    <div class="control-group">
+      <%= f.label :description, :class => "control-label", :value => "Descripción" %><br />
+      <%= f.text_field :description, :class => "form-control" %>
+    </div>
+    
+    <div class="control-group">
+      <%= f.label :price, :class => "control-label", :value => "Precio x hora" %><br />
+      <%= f.number_field :price,  :class => "form-control" %>
+    </div>
+    
+    <div class="control-group">
+      <%= f.label :opening_time, :class => "control-label", :value => "Hora de apertura" %><br />
+      <%= f.time_field :opening_time,  :class => "form-control", :value => "08:00" %>
+    </div>
+    
+    <div class="control-group">
+      <%= f.label :closing_time, :class => "control-label" , :value => "Hora de cierre"%><br />
+      <%= f.time_field :closing_time,  :class => "form-control", :value => "22:00" %>
+    </div>
+    
+</div>
+<div class="col-md-6">
+  
+  <div class="control-group">
+    <%= f.label :district, :class => "control-label", :value => "Distrito" %><br />
+    <%= f.select :district_id, @districts.map { |p| [p.description, p.id] }, {:class => "form-control"} %>
+  </div>
+  
+  <h4>Seguridad</h4>
+  <div class="control-group">
+    <%= f.label "has_security_cameras" %> 
+    <%= f.check_box :has_security_cameras  %>
+</div>
+  <div class="control-group">
+    <%= f.label "has_security_alarms" %> 
+    <%= f.check_box :has_security_alarms  %>
+</div>
+  <div class="control-group">
+    <%= f.label "has_security_persons" %> 
+    <%= f.check_box :has_security_persons  %> 
+</div>
+<h4>Servicios cercanos</h4>
+  <div class="control-group">
+    <%= f.label "has_supermarkets_close" %> 
+    <%= f.check_box :has_supermarkets_close  %> 
+</div>
+  <div class="control-group">
+    <%= f.label "has_restaurants_close" %> 
+    <%= f.check_box :has_restaurants_close  %> 
+</div>
+  <div class="control-group">
+    <%= f.label "has_cinemas_close" %>
+    <%= f.check_box :has_cinemas_close  %> 
+</div>
+  
+  
+  </div>
+  
+  
+  <div class="row">
+    <% if @parking_lot.errors.any? %>
+      <div id="errors">
+        <% @parking_lot.errors.full_messages.each do |msg| %>
+        <p class="text text-warning"> <%= msg %> </p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  
+</br>
+    <div class="control-group">
+      <div class="controls">
+      <%= f.submit  :class => "btn btn-success" %>
+      </div>
+    </div>
+
+<% end %>
+
+
+</fieldset>
+</div>
