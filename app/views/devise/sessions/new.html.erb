@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>InstaParking</title>
+  <title>Parking Cars</title>
   <%= stylesheet_link_tag "index/bootstrap.min", media: "screen", rel: "stylesheet", type: "text/css" %>
   <%= stylesheet_link_tag "index/animate.min", media: "screen", rel: "stylesheet", type: "text/css" %>
   <%= stylesheet_link_tag "index/font-awesome.min", media: "screen", rel: "stylesheet", type: "text/css" %>
@@ -44,12 +44,13 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="index.html">
-            <h1>Bienvenido a InstaParking !!!</h1>
+            <h1>Bienvenido a Parking Cars !!!</h1>
           </a>                    
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
             <li class="scroll active"><a href="#howitwork">Oferta un estacionamiento</a></li>
+            <li class="scroll"><a href="#parkinglots">Nuestros Estacionamientos</a></li>
             <li class="scroll"><a href="#tos">¿ Alguna duda ?</a></li>
             <li class="scroll"><a href="#login">Iniciar Sesion</a></li>       
           </ul>
@@ -79,6 +80,30 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam</p>
         </div>
       </div>  
+    </div>
+  </section>
+  
+  <section id="parkinglots">
+    <div class="container">
+      <div class="row">
+        <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">
+          <h2>Nuestros Estacionamientos</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam</p>
+        </div>
+      </div>
+      <div class="team-members">
+        <div class="row">
+          <% @parking_lots.each do |parking_lot| %>
+            <div class="col-sm-6 col-md-3">
+              <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="300ms">
+                <div class="member-image">
+                  <%= image_tag parking_lot.avatar.url(:medium), alt: "", class: "img-responsive" %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>            
     </div>
   </section>
 
@@ -218,10 +243,10 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-6">
-            <p>&copy; 2016 InstaParking</p>
+            <p>&copy; 2016 Parking Cars</p>
           </div>
           <div class="col-sm-6">
-            <p class="pull-right">Diseñado por InstaParking</p>
+            <p class="pull-right">Diseñado por Parking Cars</p>
           </div>
         </div>
       </div>
