@@ -5,7 +5,7 @@
     <tr>
         <th>Id</th>
         <th>Distrito</th>
-        <th>Estacionmiento</th>
+        <th>Estacionamiento</th>
         <th>Cliente</th>
         <th>Fecha</th>
         <th>Tiempo</th>
@@ -23,9 +23,9 @@
         <td><%= rent.user.name %></td>
         <td><%= rent.date %></td>
         <td><%= rent.minutes %></td>
-        <td><%= link_to "Show", rent %></td>
-        <td><%= link_to "Edit", edit_rent_path(rent) %></td>
-        <td><%= link_to "Remove", rent, method: :delete, data: { confirm: "Are you sure?" } %></td>
+        <td><%= link_to "Ver", rent %></td>
+        <td><%= link_to "Editar", edit_rent_path(rent) %></td>
+        <td><%= link_to "Eliminar", rent, method: :delete, data: { confirm: "Estas seguro?" } %></td>
     </tr>
     <% end %>
     </tbody>

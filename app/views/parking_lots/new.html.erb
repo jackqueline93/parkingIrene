@@ -8,30 +8,31 @@
 
 <%= form_for(@parking_lot) do |f| %>
 
+<h3>Formulario de Estacionamiento</h3>
 <div class="col-md-6">
 
     <div class="control-group">
-      <%= f.label :name, :class => "control-label", :value => "Nombre" %>
+      <%= f.label "Nombre", :class => "control-label", :value => "Nombre" %>
       <%= f.text_field :name, autofocus: true, :class => "form-control" %>
     </div>
   
     <div class="control-group">
-      <%= f.label :description, :class => "control-label", :value => "Descripción" %><br />
+      <%= f.label "Descripcion", :class => "control-label", :value => "Descripción" %><br />
       <%= f.text_field :description, :class => "form-control" %>
     </div>
     
     <div class="control-group">
-      <%= f.label :price, :class => "control-label", :value => "Precio x hora" %><br />
+      <%= f.label "Precio", :class => "control-label", :value => "Precio x hora" %><br />
       <%= f.number_field :price,  :class => "form-control" %>
     </div>
     
     <div class="control-group">
-      <%= f.label :opening_time, :class => "control-label", :value => "Hora de apertura" %><br />
+      <%= f.label "Desde", :class => "control-label", :value => "Hora de apertura" %><br />
       <%= f.time_field :opening_time,  :class => "form-control", :value => "08:00" %>
     </div>
     
     <div class="control-group">
-      <%= f.label :closing_time, :class => "control-label" , :value => "Hora de cierre"%><br />
+      <%= f.label "Hasta", :class => "control-label" , :value => "Hora de cierre"%><br />
       <%= f.time_field :closing_time,  :class => "form-control", :value => "22:00" %>
     </div>
     
@@ -39,7 +40,7 @@
 <div class="col-md-6">
   
   <div class="control-group">
-    <%= f.label :district, :class => "control-label", :value => "Distrito" %><br />
+    <%= f.label "Distrito", :class => "control-label", :value => "Distrito" %><br />
     <%= f.select :district_id, @districts.map { |p| [p.description, p.id] }, {:class => "form-control"} %>
   </div>
   
