@@ -1,0 +1,21 @@
+<h1>Distritos disponibles</h1>
+<a href="/districts/new" >Agregar distrito</a>
+<table class="table table-hovered table-bordered">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Descripción</th>
+        <th>Acciones</th>
+    </tr>        
+    </thead>
+    <tbody>
+    <% @districts.each do |district| %>    
+    <tr>
+        <td><%= district.id %></td>
+        <td><%= district.description %></td>
+        <td><a href="/districts/<%= district.id %>"> Ver </a> </td>
+    </tr>
+    <% end %>
+    </tbody>
+    
+</table>
