@@ -7,8 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="<%= districts_path %>">Distritos</a></li>
+          <li><a href="<%= users_path %>">Usuarios</a></li>
+          <li><a href="<%= parking_lots_path %>">Estacionamientos</a></li>
+          <li><a href="<%= rents_path %>">Reservaciones</a></li>
+          <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  <%= yield %>
 
 </body>
 </html>
